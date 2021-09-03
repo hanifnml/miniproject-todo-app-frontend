@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forget Password</title>
+  <link rel="stylesheet" href="/public/css/forgetReset.css">
+</head>
+
+<body>
+  <div class="container flex justify-center align-center">
+    <div class="card">
+      <h3 class="card-title">
+        Forgot Password
+      </h3>
+      <span class="card-subtitle">
+        We will send link to reset your password, write down your email below
+      </span>
+      <div class="card-content">
+        <form onsubmit="forgetPassword(event)">
+          <div class="input-wrapper">
+            <input type="email" name="email" id="email" placeholder="Email">
+          </div>
+          <div class="input-wrapper">
+            <button type="submit" class="btn">
+              Submit Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/public/js/index.js">
+
+  </script>
+</body>
+
+
+</html>
