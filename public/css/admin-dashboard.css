@@ -1,0 +1,236 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins';
+}
+
+.text-center{
+  text-align: center;
+}
+
+.circle-small{
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.account-name {
+  margin-top: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #c4c4c4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dropbtn {
+  color: white;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display: block;}
+
+
+.logo {
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.account-settings {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.circle {
+  margin: auto;
+  background-color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.user{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px;
+  border-color: black;
+  border-style: solid;
+  padding-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.foto {
+  width: 65px;
+  height: 65px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+}
+
+.nama {
+  font-family: 'Roboto';
+  margin-top: -15px;
+  margin-left: 25px;
+  /* background-color: #c4c4c4; */
+}
+
+.nama p {
+  font-style: normal;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.nama small {
+  opacity: 0.5;
+}
+
+.edit {
+  margin-top: 25px;
+}
+
+.pagination {
+  position: relative;
+  display: inline-block;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #d9d9d9;
+}
+
+.pagination a.active {
+  background-color: #c4c4c4;
+}
+
+.footer {
+  margin-top: 10px;
+  background-color: #c4c4c4;
+  text-align: center;
+  padding: 100px;
+}
+
+/* For mobile */
+@media only screen and (min-width: 600px) {
+  .justify-lr{
+    padding-left: 50px;
+    padding-right: 80px;
+  }
+  .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .user-report {
+    background-color: #c4c4c4;
+    width: 90%;
+    height: 250px;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+  .registered-users {
+    background-color: #c4c4c4;
+    width: 90%;
+    height: 250px;
+    padding: 25px;
+    /* margin: auto; */
+  }
+}
+
+/* For desktop */
+@media only screen and (min-width: 768px) {
+  .justify-lr{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .user-report {
+    background-color: #c4c4c4;
+    width: 54%;
+    height: 250px;
+    padding: 25px;
+  }
+  .registered-users {
+    background-color: #c4c4c4;
+    width: 35%;
+    height: 250px;
+    padding: 25px;
+    /* margin: auto; */
+  }
+}
