@@ -12,6 +12,8 @@ function Navbar(props) {
     <div>
       <Router>
         <Button onClick={() => navigateTo('/dashboard')} variant="primary">To Dashboard</Button>
+        <Button onClick={() => navigateTo('/register')} variant="primary">To Register</Button>
+        <Button onClick={() => navigateTo('/login')} variant="primary">To Login</Button>
       </Router>
     </div>
   )
