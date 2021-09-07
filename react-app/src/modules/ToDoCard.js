@@ -9,15 +9,7 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 // Styles
 import "./ToDoCard.css";
 
-function ToDoCard({ item }) {
-  const handleClickEdit = () => {
-    console.log("Edit clicked")
-  }
-
-  const handleClickDelete = () => {
-    console.log("Delete clicked")
-  }
-
+function ToDoCard({ handleClickEdit, handleClickDelete, item, index }) {
   return (
     <div className="todo-card d-flex align-items-center mb-4">
       {/* { item.text } */}
@@ -37,8 +29,14 @@ function ToDoCard({ item }) {
         </div>
       </div>
       <div className="todo-buttons d-flex">
-        <AiFillEdit onClick={() => handleClickEdit()} className="todo-button edit" />
-        <AiFillDelete onClick={() => handleClickDelete()} className="todo-button delete" />
+        <AiFillEdit
+          onClick={() => handleClickEdit(true, index)}
+          className="todo-button edit"
+        />
+        <AiFillDelete
+          onClick={() => handleClickDelete(true, index)}
+          className="todo-button delete"
+        />
       </div>
     </div>
   );
