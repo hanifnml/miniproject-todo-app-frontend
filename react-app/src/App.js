@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path='/Reset' component={Reset} />
-          <Route exact path='/Forgot' component={Forgot} />
+          <Route exact path='/resetpassword' component={Reset} />
+          <Route exact path='/forgotpassword' component={Forgot} />
         </Switch>
       </BrowserRouter>
     </div>
