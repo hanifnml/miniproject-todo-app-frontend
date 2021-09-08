@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
 import validator from 'validator';
 
 function ForgotForm() {
@@ -18,6 +20,11 @@ function ForgotForm() {
     }
   }
 
+  const [ show, setShow ] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -36,7 +43,23 @@ function ForgotForm() {
             </div>
             <span>{emailError}</span>
 
-            <button type="submit" value="send" className="btn btn-primary btn-md btn-block">Send</button>
+            <Link
+              to='/resetpassword'
+              className="btn btn-primary btn-md btn-block"
+              onClick={handleShow}  
+            >Send</Link>
+
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header>
+                <Modal.Title>Email Confirmation</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>Reset code has been sent to your email</Modal.Body>
+              <Modal.Footer>
+                <Button variant="primary" onClick={handleClose}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </form>
         </div>
       </div>
