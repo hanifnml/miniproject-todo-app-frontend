@@ -103,7 +103,7 @@ export default function UserDashboard() {
         <h4 className="mb-0">To Do</h4>
         <div>
           <Button
-            variant="primary"
+            variant="danger"
             onClick={() => handleClickAddShowDialog(true)}
           >
             Add New
@@ -129,6 +129,7 @@ export default function UserDashboard() {
         setShow={handleClickAddShowDialog}
         enableFooter
         onClickSaveButton={handleClickSaveToDo}
+        saveButtonText="Add"
       >
         <ToDoCreateForm
           parentState={toDoAddStates}
@@ -156,6 +157,7 @@ export default function UserDashboard() {
         setShow={handleClickDeleteShowDialog}
         enableFooter
         onClickSaveButton={handleClickDeleteToDo}
+        saveButtonText="Delete"
       >
         <div>Apakah anda yakin ingin menghapus to do?</div>
       </BaseDialog>

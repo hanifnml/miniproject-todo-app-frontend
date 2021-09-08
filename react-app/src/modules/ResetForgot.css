@@ -1,5 +1,5 @@
 .resetforgot .center {
-  background-color: #01263a;
+  background-color: #ad2829;
   color: white;
   border-radius: 1em;
   padding: 1em;
@@ -14,23 +14,4 @@
   display: flex;
 }
 
-.resetforgot label,
-.resetforgot input {
-  padding: 0.5em;
-}
-
-.resetforgot span {
-  font-weight: bold;
-  color: red;
-  font-size: 14px;
-}
-
-.resetforgot .btn {
-  width: 100%;
-  margin-top: 1.5em;
-  align-items: center;
-}
-
-@media screen and (max-width: 550px) {
-  
-}
+@media screen and (max-width: 550px) {}

@@ -13,6 +13,7 @@ function BaseDialog({
   title,
   enableFooter = false,
   onClickSaveButton = null,
+  saveButtonText = "Save",
   size = "lg",
   children,
 }) {
@@ -25,13 +26,13 @@ function BaseDialog({
       {enableFooter && (
         <Footer className="d-flex">
           <div>
-            <Button variant="secondary" onClick={() => setShow(false)}>
+            <Button variant="outline-danger" onClick={() => setShow(false)}>
               Close
             </Button>
           </div>
           <div>
-            <Button variant="primary" onClick={onClickSaveButton}>
-              Save
+            <Button variant="danger" onClick={onClickSaveButton}>
+              {saveButtonText}
             </Button>
           </div>
         </Footer>

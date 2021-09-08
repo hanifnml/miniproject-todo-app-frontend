@@ -18,7 +18,7 @@ const Header = ({ user }) => {
   return (
     <nav className="header">
       <div className="head-container">
-        <div className="logo">TODO List App</div>
+        <div className="logo">TODO App</div>
         <div className="profile">
           <img src={ProfilePict} alt="profile-picture" />
           <DropdownButton
