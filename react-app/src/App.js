@@ -15,15 +15,21 @@ import Navbar from "./components/Navbar";
 // FontAwesomeIcon
 import './components/FontAwesomeIcon'
 
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 function App(props) {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar></Navbar>
-        <Container>
-          <Routes />
-        </Container>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar></Navbar>
+          <Container>
+            <Routes />
+          </Container>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
