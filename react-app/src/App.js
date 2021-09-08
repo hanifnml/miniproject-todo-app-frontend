@@ -1,11 +1,7 @@
 import './App.css';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 // import Navbar from './Components/Navbar';
-import Reset from "./Pages/Reset";
-import Forgot from './Pages/Forgot';
-import Admin from './Pages/Admin';
-
 
 // Libs
 import { Routes } from "./libs/Routes";
@@ -15,6 +11,9 @@ import { Container } from "react-bootstrap";
 
 // Component
 import Navbar from "./components/Navbar";
+
+// FontAwesomeIcon
+import './components/FontAwesomeIcon'
 
 // Redux
 import { Provider } from "react-redux";

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Bootstrap Component
-import { Image } from "react-bootstrap";
+// import { Image } from "react-bootstrap";
 
 // Icons
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
