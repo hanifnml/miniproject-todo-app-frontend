@@ -11,12 +11,19 @@
 }
 
 .row {
-  width: 500px;
+  width: 50% !important;
   display: flex;
 }
 
-label, input {
-  padding: 0.5em ;
+label,
+input {
+  padding: 0.5em;
+}
+
+span {
+  font-weight: bold;
+  color: red;
+  font-size: 14px;
 }
 
 .btn {
@@ -27,7 +34,7 @@ label, input {
 
 @media screen and (max-width: 550px) {
   .row {
-    width: 400px;
+    width: 30% !important;
     justify-content: center;
     align-items: center;
   }
