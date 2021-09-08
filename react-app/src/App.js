@@ -16,20 +16,21 @@ import { Container } from "react-bootstrap";
 // Component
 import Navbar from "./components/Navbar";
 
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 function App(props) {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar></Navbar>
-        <Container>
-          <Routes />
-        </Container>
-        <Switch>
-          <Route exact path='/resetpassword' component={Reset} />
-          <Route exact path='/forgot-password' component={Forgot} />
-          <Route exact path='/admin' component={Admin} /> 
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar></Navbar>
+          <Container>
+            <Routes />
+          </Container>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

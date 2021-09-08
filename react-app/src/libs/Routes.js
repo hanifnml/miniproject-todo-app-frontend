@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import AuthRoute from "./AuthRoute";
+import UnauthRoute from "./UnauthRoute";
 
 // Pages
 import UserDashboard from "../pages/UserDashboard";
@@ -11,11 +13,11 @@ import Forgot from '../pages/Forgot'
 export const Routes = (props) => {
   return (
     <Switch>
-      <Route exact path="/dashboard" component={UserDashboard} />
-      <Route exact path="/register" component={Registration} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path='/resetpassword' component={Reset} />
-      <Route exact path='/forgotpassword' component={Forgot} />
+      <UnauthRoute exact path="/" component={UserDashboard} />
+      <AuthRoute exact path="/register" component={Registration} />
+      <AuthRoute exact path="/login" component={Login} />
+      <AuthRoute exact path="/resetpassword" component={Reset} />
+      <AuthRoute exact path="/forgotpassword" component={Forgot} />
     </Switch>
   );
 };

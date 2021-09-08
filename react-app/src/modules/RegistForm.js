@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Redirect, Link } from 'react-router-dom'
+import { BrowserRouter, Redirect, Link, useHistory } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import './RegistForm.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import TodoImage from '../assets/img/undraw_To_do_list_re_9nt7.svg'
 import validate from './validateRegistration'
 
+// Redux
+import { signupUser } from "../redux/actions/userActions";
+import { useDispatch } from "react-redux";
+
 const RegistForm = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  
   const [values, setValue] = useState({
     email: '',
     password: '',
@@ -26,10 +33,17 @@ const RegistForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setErrors(validate(values))
-    // if (Object.keys(errors).length === 0) {
-    //   console.log('berjalan');
-    //   setRedirected(true)
-    // }
+    if (Object.keys(errors).length === 0) {
+      dispatch(
+        signupUser(
+          {
+            ...values,
+            role: "user",
+          },
+          history
+        )
+      );
+    }
   }
 
   if (redirected) {
