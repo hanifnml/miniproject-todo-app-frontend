@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@reduxjs/toolkit": "^1.6.1",
-=======
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
->>>>>>> 597d780808b9299896ee53a09e41a1b47c33312a
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -17,11 +14,8 @@
     "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
-<<<<<<< HEAD
     "react-redux": "^7.2.5",
-=======
     "react-bootstrap-validation": "^0.1.11",
->>>>>>> 597d780808b9299896ee53a09e41a1b47c33312a
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
