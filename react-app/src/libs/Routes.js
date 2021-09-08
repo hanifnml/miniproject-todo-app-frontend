@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import AuthRoute from "./AuthRoute";
+import UnauthRoute from "./UnauthRoute";
 
 // Pages
 import UserDashboard from "../Pages/UserDashboard";
