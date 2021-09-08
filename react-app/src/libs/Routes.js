@@ -4,9 +4,9 @@ import AuthRoute from "./AuthRoute";
 import UnauthRoute from "./UnauthRoute";
 
 // Pages
-import UserDashboard from "../Pages/UserDashboard";
-import Registration from "../Pages/Registration";
-import Login from '../Pages/Login'
+import UserDashboard from "../pages/UserDashboard";
+import Registration from "../pages/Registration";
+import Login from '../pages/Login'
 import Reset from '../Pages/Reset'
 import Forgot from '../Pages/Forgot'
 import Admin from '../Pages/Admin'
@@ -14,12 +14,12 @@ import Admin from '../Pages/Admin'
 export const Routes = (props) => {
   return (
     <Switch>
-      <Route exact path="/dashboard" component={UserDashboard} />
-      <Route exact path="/register" component={Registration} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path='/resetpassword' component={Reset} />
-      <Route exact path='/forgotpassword' component={Forgot} />
-      <Route exact path='/admin' component={Admin} />
+      <UnauthRoute exact path="/" component={UserDashboard} />
+      <AuthRoute exact path="/register" component={Registration} />
+      <AuthRoute exact path="/login" component={Login} />
+      <AuthRoute exact path="/resetpassword" component={Reset} />
+      <AuthRoute exact path="/forgotpassword" component={Forgot} />
+      <UnauthRoute exact path="/admin" component={Admin} />
     </Switch>
   );
 };
