@@ -13,7 +13,6 @@ function BaseDialog({
   title,
   enableFooter = false,
   onClickSaveButton = null,
-
   size = "lg",
   children,
 }) {
@@ -24,13 +23,17 @@ function BaseDialog({
       </Header>
       <Body>{children}</Body>
       {enableFooter && (
-        <Footer>
-          <Button variant="secondary" onClick={() => setShow(false)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={onClickSaveButton}>
-            Save
-          </Button>
+        <Footer className="d-flex">
+          <div>
+            <Button variant="secondary" onClick={() => setShow(false)}>
+              Close
+            </Button>
+          </div>
+          <div>
+            <Button variant="primary" onClick={onClickSaveButton}>
+              Save
+            </Button>
+          </div>
         </Footer>
       )}
     </Modal>

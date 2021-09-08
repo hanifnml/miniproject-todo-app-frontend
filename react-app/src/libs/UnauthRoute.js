@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const UnauthRoute = ({ component: Component, user, ...rest }) => (
   <Route
     {...rest}
-    render={(props) => (!user ? <Redirect to="/login" /> : <Component {...props} />)}
+    render={(props) => (user ? <Redirect to="/" /> : <Component {...props} />)}
   />
 );
 

@@ -14,7 +14,7 @@ function ResetForm() {
   const handleShow = () => setShow(true)
 
   return (
-    <div className="container">
+    <div className="resetforgot container">
       <div className="row justify-content-center">
         <div className="col-md-4 center">
           <h3>Reset Password</h3>

@@ -1,4 +1,4 @@
-.center {
+.resetforgot .center {
   background-color: #01263a;
   color: white;
   border-radius: 1em;
@@ -10,22 +10,22 @@
   width: 31.25em;
 }
 
-.row {
+.resetforgot .row {
   display: flex;
 }
 
-label,
-input {
+.resetforgot label,
+.resetforgot input {
   padding: 0.5em;
 }
 
-span {
+.resetforgot span {
   font-weight: bold;
   color: red;
   font-size: 14px;
 }
 
-.btn {
+.resetforgot .btn {
   width: 100%;
   margin-top: 1.5em;
   align-items: center;

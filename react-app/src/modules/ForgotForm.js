@@ -26,7 +26,7 @@ function ForgotForm() {
   const handleShow = () => setShow(true)
 
   return (
-    <div className="container">
+    <div className="resetforgot container">
       <div className="row justify-content-center">
         <div className="col-md-4 center">
           <h3>Forgot Password</h3>
@@ -44,7 +44,7 @@ function ForgotForm() {
             <span>{emailError}</span>
 
             <Link
-              to='/resetpassword'
+              to='/reset-password'
               className="btn btn-primary btn-md btn-block"
               onClick={handleShow}  
             >Send</Link>

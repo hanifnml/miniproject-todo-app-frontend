@@ -1,32 +1,65 @@
-import React from 'react'
-import { Dropdown, SplitButton } from 'react-bootstrap'
-import ProfilePict from '../assets/img/profile-pict.jpeg'
-import './Header.css'
+import React from "react";
+import { Dropdown, DropdownButton, SplitButton } from "react-bootstrap";
+import ProfilePict from "../assets/img/profile-pict.jpeg";
+import "./Header.css";
+import { BrowserRouter as Router, useHistory, Link } from "react-router-dom";
 
-const Header = ({ name }) => {
+// Redux
+import { logoutUser } from "../redux/actions/userActions";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
+
+const Header = ({ user }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const navigateTo = (to) => {
+    history.push(to);
+  };
   return (
     <nav className="header">
       <div className="head-container">
-        <span className="logo">TODO List App</span>
+        <div className="logo">TODO List App</div>
         <div className="profile">
           <img src={ProfilePict} alt="profile-picture" />
-          <SplitButton
+          <DropdownButton
             variant="danger"
-            title={"Hello, " + name}
+            title={user ? `Hello, ${user.email.split("@")[0]}` : `Welcome`}
+            size="sm"
           >
-            <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-            <Dropdown.Item eventKey="3">
-              Active Item
-            </Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item eventKey="4">Sign Out</Dropdown.Item>
-          </SplitButton>
-           
+            {!user && (
+              <>
+                <Dropdown.Item onClick={() => navigateTo("/login")}>
+                  Login
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => navigateTo("/register")}>
+                  Register
+                </Dropdown.Item>
+              </>
+            )}
+            {user && (
+              <>
+                <Dropdown.Item
+                  onClick={() =>
+                    navigateTo(user.role === "user" ? "/" : "/admin")
+                  }
+                >
+                  Dashboard
+                </Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item onClick={() => dispatch(logoutUser(history))}>
+                  Log Out
+                </Dropdown.Item>
+              </>
+            )}
+          </DropdownButton>
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+});
+
+export default connect(mapStateToProps)(Header);

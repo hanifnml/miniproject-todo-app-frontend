@@ -98,8 +98,8 @@ export default function UserDashboard() {
   const [toDoDeleteIndex, settoDoDeleteIndex] = useState(null);
 
   return (
-    <div className="mt-5">
-      <div className="header d-flex justify-content-between align-items-center">
+    <div style={{marginTop: "150px"}}>
+      <div className="todo-header d-flex justify-content-between align-items-center">
         <h4 className="mb-0">To Do</h4>
         <div>
           <Button
