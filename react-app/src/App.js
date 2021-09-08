@@ -1,5 +1,11 @@
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import Navbar from './Components/Navbar';
+import Reset from "./Pages/Reset";
+import Forgot from './Pages/Forgot';
+import Admin from './Pages/Admin';
+
 
 // Libs
 import { Routes } from "./libs/Routes";
@@ -18,6 +24,11 @@ function App(props) {
         <Container>
           <Routes />
         </Container>
+        <Switch>
+          <Route exact path='/resetpassword' component={Reset} />
+          <Route exact path='/forgot-password' component={Forgot} />
+          <Route exact path='/admin' component={Admin} /> 
+        </Switch>
       </BrowserRouter>
     </div>
   );
