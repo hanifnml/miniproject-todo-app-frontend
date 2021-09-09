@@ -37,15 +37,27 @@ const LoginForm = () => {
 
   if (Object.keys(errors).length === 0 && isLogin) {
     alert("Logn succesfully")
-    dispatch(
-      loginUser(
-        {
-          ...values,
-          role: "user",
-        },
-        history
-      )
-    );
+    if (values.email === "admin@admin.com") {
+      dispatch(
+        loginUser(
+          {
+            ...values,
+            role: "admin",
+          },
+          history
+        )
+      );
+    } else {
+      dispatch(
+        loginUser(
+          {
+            ...values,
+            role: "user",
+          },
+          history
+        )
+      );
+    }
   }
 
   return (
