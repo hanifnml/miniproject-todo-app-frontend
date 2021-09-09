@@ -1,8 +1,8 @@
 import React from "react"; // Bootstrap Component
-import { BrowserRouter as Router, useHistory, Link } from "react-router-dom";
+// import { BrowserRouter as Router, useHistory, Link } from "react-router-dom";
 
 // Bootstrap Components
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 // Components
 import Header from "./Header";

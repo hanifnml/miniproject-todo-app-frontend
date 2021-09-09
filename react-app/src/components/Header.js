@@ -1,8 +1,8 @@
 import React from "react";
-import { Dropdown, DropdownButton, SplitButton } from "react-bootstrap";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import ProfilePict from "../assets/img/profile-pict.jpeg";
 import "./Header.css";
-import { BrowserRouter as Router, useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Redux
 import { logoutUser } from "../redux/actions/userActions";
@@ -20,7 +20,8 @@ const Header = ({ user }) => {
       <div className="head-container">
         <div className="logo">TODO App</div>
         <div className="profile">
-          <img src={ProfilePict} alt="profile-picture" />
+          
+          {user ? <img src={ProfilePict} alt="profile" /> : "" }
           <DropdownButton
             variant="danger"
             title={user ? `Hello, ${user.email.split("@")[0]}` : `Welcome`}
