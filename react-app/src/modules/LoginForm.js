@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Redirect, Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import "./LoginForm.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,7 +19,7 @@ const LoginForm = () => {
     password: "",
   });
   const [errors, setErrors] = useState({});
-  const [redirected, setRedirected] = useState(false);
+  const [isLogin, setIsLogin] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,26 +32,19 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
-    if (Object.keys(errors).length === 0) {
-      dispatch(
-        loginUser(
-          {
-            ...values,
-            role: "user",
-          },
-          history
-        )
-      );
-      // console.log('berjalan');
-      // setRedirected(true)
-    }
+    setIsLogin(true)
   };
 
-  if (redirected) {
-    return (
-      <BrowserRouter>
-        <Redirect to="/dashboard" />
-      </BrowserRouter>
+  if (Object.keys(errors).length === 0 && isLogin) {
+    alert("Logn succesfully")
+    dispatch(
+      loginUser(
+        {
+          ...values,
+          role: "user",
+        },
+        history
+      )
     );
   }
 

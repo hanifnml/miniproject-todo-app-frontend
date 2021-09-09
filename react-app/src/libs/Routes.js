@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import UnauthRoute from "./UnauthRoute";
 import UserRoute from "./UserRoute";
 import AdminRoute from "./AdminRoute";

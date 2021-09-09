@@ -1,26 +1,19 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Redirect, Link, useHistory } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import './RegistForm.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import TodoImage from '../assets/img/undraw_To_do_list_re_9nt7.svg'
 import validate from './validateRegistration'
 
-// Redux
-import { signupUser } from "../redux/actions/userActions";
-import { useDispatch } from "react-redux";
-
-const RegistForm = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
-  
+const RegistForm = () => {  
   const [values, setValue] = useState({
     email: '',
     password: '',
     password2: ''
   })
   const [errors, setErrors] = useState({})
-  const [redirected, setRedirected] = useState(false)
+  const [isSubmited, setIsSubmited] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -33,24 +26,13 @@ const RegistForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setErrors(validate(values))
-    if (Object.keys(errors).length === 0) {
-      dispatch(
-        signupUser(
-          {
-            ...values,
-            role: "user",
-          },
-          history
-        )
-      );
-    }
+    setIsSubmited(true)
   }
 
-  if (redirected) {
+  if (Object.keys(errors).length === 0 && isSubmited) {
+    alert("User has been created")
     return (
-      <BrowserRouter>
-        <Redirect to="/login" />
-      </BrowserRouter>
+      <Redirect to="/login" />
     )
   }
 

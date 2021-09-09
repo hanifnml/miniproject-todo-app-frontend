@@ -6,8 +6,6 @@ import {
   FormGroup,
   FormLabel as Label,
   FormControl as Control,
-  FormText as Text,
-  Button,
   Image,
 } from "react-bootstrap";
 
