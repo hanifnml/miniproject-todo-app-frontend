@@ -90,7 +90,7 @@ export default function UserDashboard() {
     settoDoDeleteIndex(null);
     setTodos(
       todos.filter((item, index) => {
-        return index != toDoDeleteIndex;
+        return index !== toDoDeleteIndex;
       })
     );
   };

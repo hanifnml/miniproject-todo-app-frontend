@@ -11,6 +11,7 @@ import { Container } from "react-bootstrap";
 
 // Component
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 
 // FontAwesomeIcon
 import './components/FontAwesomeIcon'
@@ -28,6 +29,7 @@ function App(props) {
           <Container>
             <Routes />
           </Container>
+          <Footer></Footer>
         </BrowserRouter>
       </Provider>
     </div>

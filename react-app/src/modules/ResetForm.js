@@ -6,9 +6,7 @@ import "./ResetForgot.css";
 import {
   Form,
   FormGroup,
-  FormLabel as Label,
   FormControl as Control,
-  FormText as Text,
   Button,
 } from "react-bootstrap";
 

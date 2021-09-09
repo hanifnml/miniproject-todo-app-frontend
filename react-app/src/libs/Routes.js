@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import UnauthRoute from "./UnauthRoute";
 import UserRoute from "./UserRoute";
 import AdminRoute from "./AdminRoute";
@@ -8,9 +8,9 @@ import AdminRoute from "./AdminRoute";
 import UserDashboard from "../pages/UserDashboard";
 import Registration from "../pages/Registration";
 import Login from '../pages/Login'
-import Reset from '../Pages/Reset'
-import Forgot from '../Pages/Forgot'
-import Admin from '../Pages/Admin'
+import Reset from '../pages/Reset'
+import Forgot from '../pages/Forgot'
+import Admin from '../pages/Admin'
 
 export const Routes = (props) => {
   return (

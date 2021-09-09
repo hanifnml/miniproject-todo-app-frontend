@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect, Link, useHistory } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import './RegistForm.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
