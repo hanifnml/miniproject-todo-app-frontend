@@ -20,7 +20,8 @@ const Header = ({ user }) => {
       <div className="head-container">
         <div className="logo">TODO App</div>
         <div className="profile">
-          <img src={ProfilePict} alt="profile-picture" />
+          
+          {user ? <img src={ProfilePict} alt="profile-picture" /> : "" }
           <DropdownButton
             variant="danger"
             title={user ? `Hello, ${user.email.split("@")[0]}` : `Welcome`}
