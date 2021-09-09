@@ -35,7 +35,7 @@ export default function UserDashboard() {
       title: "",
       description: "",
       image: null,
-    })
+    });
     setShowAddDialog(false);
   };
 
@@ -59,16 +59,16 @@ export default function UserDashboard() {
     setTodos(
       todos.map((item, index) => {
         if (index === toDoEditIndex) {
-          return toDoEditStates
+          return toDoEditStates;
         }
-        return item
+        return item;
       })
     );
     settoDoEditStates({
       title: "",
       description: "",
       image: null,
-    })
+    });
   };
 
   const [toDoEditIndex, settoDoEditIndex] = useState(null);
@@ -98,7 +98,7 @@ export default function UserDashboard() {
   const [toDoDeleteIndex, settoDoDeleteIndex] = useState(null);
 
   return (
-    <div style={{marginTop: "150px"}}>
+    <div className="container" style={{ marginTop: "150px" }}>
       <div className="todo-header d-flex justify-content-between align-items-center">
         <h4 className="mb-0">To Do</h4>
         <div>
@@ -110,7 +110,7 @@ export default function UserDashboard() {
           </Button>
         </div>
       </div>
-      <div className="todo-items mt-5">
+      <div className={`todo-items ${todos.length === 0 ? "mt-4" : "mt-5"}`}>
         {todos.length === 0 && <div>No todos left</div>}
         {todos.map((item, index) => (
           <ToDoCard
