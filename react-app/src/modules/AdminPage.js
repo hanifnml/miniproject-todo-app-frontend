@@ -1,57 +1,51 @@
-import React, { useState } from 'react'
-import { Button, ButtonGroup, ButtonToolbar, Card, CardGroup } from 'react-bootstrap'
-import UserProfile from '../components/UserProfile'
-import MyVerticallyCenteredModal from '../components/createTODO'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './AdminPage.css'
+import React, { useState } from "react";
+
+// Components
+import UserCard from "./UserCard";
+
+import "./AdminPage.css";
 
 function AdminPage() {
-  const [ modalShow, setModalShow ] = useState(false);
+  const [users, setUsers] = useState([
+    {
+      username: "Sofia123",
+      email: "sofia123@mail.com",
+      image:
+        "https://cdn.pixabay.com/photo/2015/10/12/15/10/woman-984246_960_720.jpg",
+    },
+    {
+      username: "Cindyx04",
+      email: "cindy@mail.com",
+      image:
+        "https://cdn.pixabay.com/photo/2016/06/30/08/37/suitcase-1488516_960_720.jpg",
+    },
+    {
+      username: "Alexandra907",
+      email: "alex907@mail.com",
+      image:
+        "https://cdn.pixabay.com/photo/2014/11/21/00/09/man-539993_960_720.jpg",
+    },
+    {
+      username: "Tom777y",
+      email: "tommy@mail.com",
+      image:
+        "https://cdn.pixabay.com/photo/2016/11/23/18/21/floating-1854203_960_720.jpg",
+    },
+  ]);
 
   return (
-    <div className="admin container">
-      <h1>Hi, Admin!</h1>
-      <h4>How do you feel today?</h4>
-
-      {/* Cards Information */}
-      <CardGroup>
-        <Card className="text-center left-card">
-          <Card.Body>
-            User Report
-          </Card.Body>
-        </Card>
-        <span id="space-card"></span>
-        <Card className="text-center right-card">
-          <Card.Body>
-            <Card.Text><span id="number">23</span></Card.Text>
-            <Card.Text>Registered Users</Card.Text>
-          </Card.Body>
-        </Card>
-      </CardGroup>  
-
-      {/* User Lists */}
-      <h3>User List</h3>
-      <FontAwesomeIcon
-        icon='user-plus' 
-        size="1x"
-        id="user-plus"
-        onClick={() => setModalShow(true)} />
-
-      <UserProfile />
-      
-      {/* BUtton Toolbar */}
-      <ButtonToolbar aria-label="Toolbar with button groups" className='button'>
-        <ButtonGroup className="me-2">
-          <Button>1</Button> <Button>2</Button> <Button>3</Button> <Button>4</Button> <Button>5</Button>
-        </ButtonGroup>
-      </ButtonToolbar>
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+    <div className="container" style={{ marginTop: "150px" }}>
+      <div className="user-header d-flex justify-content-between align-items-center">
+        <h4 className="mb-0">Users List</h4>
+      </div>
+      <div className="user-items mt-4">
+        {users.length === 0 && <div>No users!</div>}
+        {users.map((item, index) => (
+          <UserCard key={index} index={index} item={item} />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default AdminPage
+export default AdminPage;

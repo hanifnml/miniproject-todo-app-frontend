@@ -47,7 +47,7 @@
   margin-left: 1100px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .admin #pencil {
     margin-right: -1.3rem;
   }
@@ -62,5 +62,9 @@
 
   .admin #user-plus {
     margin: -50px 0 0 400px;
+  }
+
+  .user-items {
+    margin-top: 30px !important;
   }
 }
