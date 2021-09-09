@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Redirect, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect, Link, useHistory } from "react-router-dom";
 
 // Bootstrap Component
 import {
@@ -18,13 +18,23 @@ import TodoImage from "../assets/img/undraw_To_do_list_re_9nt7.svg";
 import validate from "./validateRegistration";
 
 const RegistForm = () => {
+  const history = useHistory()
+
+  const [isSubmited, setIsSubmited] = useState(false);
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmited) {
+      alert("User has been created");
+      history.push("/login")
+    }
+    setIsSubmited(false)
+  }, [isSubmited])
+
   const [values, setValue] = useState({
     email: "",
     password: "",
     password2: "",
   });
   const [errors, setErrors] = useState({});
-  const [isSubmited, setIsSubmited] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,11 +49,6 @@ const RegistForm = () => {
     setErrors(validate(values));
     setIsSubmited(true);
   };
-
-  if (Object.keys(errors).length === 0 && isSubmited) {
-    alert("User has been created");
-    return <Redirect to="/login" />;
-  }
 
   return (
     <div className="register container-local">

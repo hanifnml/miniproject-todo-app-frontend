@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import "./LoginForm.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoImage from "../assets/img/undraw_To_do_list_re_9nt7.svg";
@@ -20,6 +20,35 @@ import { loginUser } from "../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 
 const LoginForm = () => {
+  const [isLogin, setIsLogin] = useState(false)
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isLogin) {
+      alert("Login succesfully")
+      if (values.email === "admin@admin.com") {
+        dispatch(
+          loginUser(
+            {
+              ...values,
+              role: "admin",
+            },
+            history
+          )
+        );
+      } else {
+        dispatch(
+          loginUser(
+            {
+              ...values,
+              role: "user",
+            },
+            history
+          )
+        );
+      }
+    }
+    setIsLogin(false)
+  }, [isLogin])
+  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -28,7 +57,6 @@ const LoginForm = () => {
     password: "",
   });
   const [errors, setErrors] = useState({});
-  const [isLogin, setIsLogin] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,31 +71,6 @@ const LoginForm = () => {
     setErrors(validate(values));
     setIsLogin(true)
   };
-
-  if (Object.keys(errors).length === 0 && isLogin) {
-    alert("Logn succesfully")
-    if (values.email === "admin@admin.com") {
-      dispatch(
-        loginUser(
-          {
-            ...values,
-            role: "admin",
-          },
-          history
-        )
-      );
-    } else {
-      dispatch(
-        loginUser(
-          {
-            ...values,
-            role: "user",
-          },
-          history
-        )
-      );
-    }
-  }
 
   return (
     <div className="login container-local">
