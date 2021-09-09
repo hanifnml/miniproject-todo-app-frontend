@@ -4,7 +4,7 @@ import React from "react";
 import { Image } from "react-bootstrap";
 
 // Icons
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 
 // Styles
 import "./UserCard.css";

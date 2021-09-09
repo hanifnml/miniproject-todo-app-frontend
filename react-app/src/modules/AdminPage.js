@@ -1,14 +1,4 @@
 import React, { useState } from "react";
-import {
-  Button,
-  ButtonGroup,
-  ButtonToolbar,
-  Card,
-  CardGroup,
-} from "react-bootstrap";
-import UserProfile from "../components/UserProfile";
-import MyVerticallyCenteredModal from "../components/createTODO";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components
 import UserCard from "./UserCard";
