@@ -9,7 +9,7 @@ function AdminPage() {
   const [ modalShow, setModalShow ] = useState(false);
 
   return (
-    <div className="container">
+    <div className="admin container">
       <h1>Hi, Admin!</h1>
       <h4>How do you feel today?</h4>
 

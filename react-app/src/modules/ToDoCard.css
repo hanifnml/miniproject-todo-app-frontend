@@ -30,7 +30,7 @@
 }
 
 .todo-button {
-  transition: ease-in-out;
+  transition: ease-in-out .2s;
   cursor: pointer;
   font-size: 30px;
 }
@@ -40,5 +40,5 @@
 }
 
 .todo-button:hover {
-  color: rgba(123, 5, 15, 1)
+  color: #ad2829;
 }

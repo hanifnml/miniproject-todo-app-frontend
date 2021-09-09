@@ -98,12 +98,12 @@ export default function UserDashboard() {
   const [toDoDeleteIndex, settoDoDeleteIndex] = useState(null);
 
   return (
-    <div className="mt-5">
-      <div className="header d-flex justify-content-between align-items-center">
+    <div style={{marginTop: "150px"}}>
+      <div className="todo-header d-flex justify-content-between align-items-center">
         <h4 className="mb-0">To Do</h4>
         <div>
           <Button
-            variant="primary"
+            variant="danger"
             onClick={() => handleClickAddShowDialog(true)}
           >
             Add New
@@ -129,6 +129,7 @@ export default function UserDashboard() {
         setShow={handleClickAddShowDialog}
         enableFooter
         onClickSaveButton={handleClickSaveToDo}
+        saveButtonText="Add"
       >
         <ToDoCreateForm
           parentState={toDoAddStates}
@@ -156,6 +157,7 @@ export default function UserDashboard() {
         setShow={handleClickDeleteShowDialog}
         enableFooter
         onClickSaveButton={handleClickDeleteToDo}
+        saveButtonText="Delete"
       >
         <div>Apakah anda yakin ingin menghapus to do?</div>
       </BaseDialog>

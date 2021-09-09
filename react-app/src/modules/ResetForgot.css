@@ -1,5 +1,5 @@
-.center {
-  background-color: #01263a;
+.resetforgot .center {
+  background-color: #ad2829;
   color: white;
   border-radius: 1em;
   padding: 1em;
@@ -10,27 +10,8 @@
   width: 31.25em;
 }
 
-.row {
+.resetforgot .row {
   display: flex;
 }
 
-label,
-input {
-  padding: 0.5em;
-}
-
-span {
-  font-weight: bold;
-  color: red;
-  font-size: 14px;
-}
-
-.btn {
-  width: 100%;
-  margin-top: 1.5em;
-  align-items: center;
-}
-
-@media screen and (max-width: 550px) {
-  
-}
+@media screen and (max-width: 550px) {}

@@ -1,63 +1,78 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import './ResetForgot.css';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./ResetForgot.css";
 
+// Bootstrap Component
+import {
+  Form,
+  FormGroup,
+  FormLabel as Label,
+  FormControl as Control,
+  FormText as Text,
+  Button,
+} from "react-bootstrap";
 
 function ResetForm() {
+  const history = useHistory();
+  const navigateTo = (to) => {
+    history.push(to);
+  };
+
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+
+  const handleChangePassword = async (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleChangeConfirm = async (e) => {
+    setConfirm(e.target.value);
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
+    if (password === confirm) {
+      if (password.length < 6) {
+        alert("Password must be more than 6 characters!");
+        return;
+      }
+      alert("Successfully reset your password!");
+      navigateTo("/login");
+    } else {
+      alert("Password and confirm password must be the same");
+    }
   }
-  
-  const [ show, setShow ] = useState(false)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   return (
-    <div className="container">
+    <div className="resetforgot container">
       <div className="row justify-content-center">
-        <div className="col-md-4 center">
-          <h3>Reset Password</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label for="new-pass">New Password</label>
-              <input 
-                type="password" className="form-control" placeholder="New Password" id="new-pass"
-                required
-              ></input>
+        <div className="col-md-4 p-4 center">
+          <h4 className="fw-bold">Reset Password</h4>
+          <Form className="mt-3" onSubmit={handleSubmit}>
+            <FormGroup className="mb-3" controlId="password">
+              <Control
+                type="password"
+                placeholder="Password"
+                onChange={handleChangePassword}
+              ></Control>
+            </FormGroup>
+            <FormGroup controlId="confirm">
+              <Control
+                type="password"
+                placeholder="Confirm Password"
+                onChange={handleChangeConfirm}
+              ></Control>
+            </FormGroup>
+            <div className="mt-3 mb-1">
+              <Button type="submit" variant="danger" className="w-100">
+                Save
+              </Button>
             </div>
-
-            <div className="form-group">
-              <label for="confirm-pass">Confirm Password</label>
-              <input 
-                type="password" className="form-control" placeholder="Confirm Password" id="confirm-pass" 
-                required
-              ></input>
-            </div>
-
-            <button 
-              type="submit" 
-              value="confirm" 
-              className="btn btn-primary btn-md btn-block"
-              onClick={handleShow}
-            >Confirm</button>
-
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header>
-                <Modal.Title>Reset Success</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>Your password has been reset</Modal.Body>
-              <Modal.Footer>
-                <Button variant="primary" onClick={handleClose}>
-                  Close
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </form>
+          </Form>
         </div>
       </div>
     </div>
-  )
-};
+  );
+}
 
-export default ResetForm
+export default ResetForm;
