@@ -98,7 +98,14 @@ export default function UserDashboard() {
   const [toDoDeleteIndex, settoDoDeleteIndex] = useState(null);
 
   return (
-    <div className="container" style={{ marginTop: "150px" }}>
+    <div
+      className="container"
+      style={{
+        marginTop: "150px",
+        marginBottom: "80px",
+        minHeight: "calc(100vh - 84px - 150px - 80px)",
+      }}
+    >
       <div className="todo-header d-flex justify-content-between align-items-center">
         <h4 className="mb-0">To Do</h4>
         <div>
